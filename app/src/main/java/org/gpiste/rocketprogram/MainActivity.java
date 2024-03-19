@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtUserCounter = findViewById(R.id.txtRocketCounter);
 
-        Storage s = Storage.getInstance();
+        UserStorage s = UserStorage.getInstance();
 
 //        s.addRocket(new Starship());
 //        s.addRocket(new Starship());

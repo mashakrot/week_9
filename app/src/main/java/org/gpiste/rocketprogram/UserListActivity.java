@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 public class UserListActivity extends AppCompatActivity {
 
-    private Storage storage;
+    private UserStorage storage;
     private RecyclerView recyclerView;
 
     @Override
@@ -16,7 +16,7 @@ public class UserListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
 
-        storage = Storage.getInstance();
+        storage = UserStorage.getInstance();
 
         recyclerView = findViewById(R.id.rvRocketList);
 

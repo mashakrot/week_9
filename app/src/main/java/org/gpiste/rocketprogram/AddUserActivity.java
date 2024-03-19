@@ -52,7 +52,7 @@ public class AddUserActivity extends AppCompatActivity {
         }
 
         newUser = new User(FirstName, LastName, Email, degree);
-        Storage.getInstance().addUser(newUser);
+        UserStorage.getInstance().addUser(newUser);
 
         }
 }
