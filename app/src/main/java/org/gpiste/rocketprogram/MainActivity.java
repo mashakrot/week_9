@@ -20,12 +20,17 @@ public class MainActivity extends AppCompatActivity {
 
         UserStorage s = UserStorage.getInstance();
 
-//        s.addRocket(new Starship());
-//        s.addRocket(new Starship());
-//        s.addRocket(new Sls());
-//        s.addRocket(new Starship());
-
         txtUserCounter.setText("The User count is: " + User.userCounter);
+    }
+
+    public void addUser(View view) {
+        Intent intent = new Intent(this, org.gpiste.rocketprogram.AddUserActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewUsers(View view) {
+        Intent intent = new Intent(this, ListUserInRecycleViewActivity.class);
+        startActivity(intent);
     }
 
     public void switchToAddUser(View view) {

@@ -3,29 +3,18 @@ package org.gpiste.rocketprogram;
 import java.util.ArrayList;
 
 public class UserStorage {
-     private ArrayList<User> users = new ArrayList<>();
 
-     // Singleton pattern: static instance of Storage
-     private static UserStorage storage = null;
-
-
+    private ArrayList<User> users;
+    private static UserStorage instance;
     private UserStorage() {
-        // We are using Singleton design pattern here:
-        // default constructor is set to private,
-        // so that new instances cannot be created
+        users = new ArrayList<>();
     }
 
-    /**
-     * Singleton pattern:
-     * getInstance returns the only instance of Storage
-     *
-     * @return the single instance of Storage
-     */
-    public static UserStorage getInstance() {
-        if(storage == null) {
-            storage = new UserStorage();
+    public static synchronized UserStorage getInstance() {
+        if (instance == null) {
+            instance = new UserStorage();
         }
-        return storage;
+        return instance;
     }
 
     public ArrayList<User> getUsers() {

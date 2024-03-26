@@ -14,9 +14,9 @@ public class User implements Serializable, StartStop {
 //    protected ArrayList<RocketEngine> engines = new ArrayList<>();
     public static int userCounter = 0;
 
-//    public User() {
-//        this("Falcon heavy", 70, 100_000);
-//    }
+    public User() {
+        this("F", "L", "E", "D");
+    }
 
     public User(String firstName, String lastName, String email, String degreeProgram) {
         this.firstName = firstName;

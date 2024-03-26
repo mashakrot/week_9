@@ -12,31 +12,33 @@ import android.widget.RadioGroup;
  *
  */
 public class AddUserActivity extends AppCompatActivity {
+    private EditText editFirstName, editLastName, editEmail;
+    private RadioGroup radioDegreeProgram;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
+
+        editFirstName = findViewById(R.id.editFirstName);
+        editLastName = findViewById(R.id.editLastName);
+        editEmail = findViewById(R.id.editEmail);
+        radioDegreeProgram = findViewById(R.id.radioDegreeProgram);
     }
 
     /**
      * In activity_add_rocket.xml ->
      * btnAddRocket "onClick" attribute points to this method
      */
-    User newUser = null;
+//    User newUser = null;
     public void addUser(View view) {
         String degree = "";
 
-        EditText Fname = findViewById(R.id.editFirstName);
-        EditText Lname = findViewById(R.id.editLastName);
-        EditText email = findViewById(R.id.editEmail);
-        RadioGroup rgRocketType = findViewById(R.id.radioDegreeProgram);
+        String FirstName = editFirstName.getText().toString();
+        String LastName = editLastName.getText().toString();
+        String Email = editEmail.getText().toString();
 
-        String FirstName = Fname.getText().toString();
-        String LastName = Lname.getText().toString();
-        String Email = email.getText().toString();
-
-        switch (rgRocketType.getCheckedRadioButtonId()) {
+        switch (radioDegreeProgram.getCheckedRadioButtonId()) {
             case R.id.seRadioButton:
                 degree = "Software Engineering";
                 break;
@@ -51,8 +53,10 @@ public class AddUserActivity extends AppCompatActivity {
                 break;
         }
 
-        newUser = new User(FirstName, LastName, Email, degree);
+        User newUser = new User(FirstName, LastName, Email, degree);
         UserStorage.getInstance().addUser(newUser);
 
+        finish();
         }
 }
+
