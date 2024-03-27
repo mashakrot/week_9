@@ -52,6 +52,20 @@ public class AddUserActivity extends AppCompatActivity {
                 degree = "Electrical Engineering";
                 break;
         }
+//
+//        Degree level: textUserDegrees
+//
+//        Check box ids for degree levels:
+//        Bachelor's check box: bcCheckBox
+//        Master's check box: msCheckBox
+//        Licenciate check box: lciCheckBox
+//        PhD check box: phdCheckBox
+
+//        int selectedId = radioDegreeProgram.getCheckedRadioButtonId();
+//        if (selectedId != -1) {
+//            RadioButton radioButton = findViewById(selectedId);
+//            degreeProgram = radioButton.getText().toString();
+//        }
 
         User newUser = new User(FirstName, LastName, Email, degree);
         UserStorage.getInstance().addUser(newUser);

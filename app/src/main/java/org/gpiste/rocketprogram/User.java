@@ -56,9 +56,6 @@ public class User implements Serializable, StartStop {
         return degreeProgram;
     }
 
-//    public ArrayList<RocketEngine> getEngines() {
-//        return engines;
-//    }
 
     public void printCountdown(int x) {
         if (x < 0) {
