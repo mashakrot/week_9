@@ -9,18 +9,14 @@ import java.util.ArrayList;
 public class UserStorage {
 
     private ArrayList<User> users;
-
-    private String filename = "users.data";
-    File f = new File(filename);
     private static UserStorage instance;
-    private UserStorage(String filename) {
+    private UserStorage() {
         users = new ArrayList<>();
-        this.filename = filename;
     }
 
     public static synchronized UserStorage getInstance() {
         if (instance == null) {
-            instance = new UserStorage("users.data");
+            instance = new UserStorage();
         }
         return instance;
     }
