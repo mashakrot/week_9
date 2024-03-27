@@ -16,7 +16,6 @@ public class UserStorage {
     private UserStorage(String filename) {
         users = new ArrayList<>();
         this.filename = filename;
-        loadUsers();
     }
 
     public static synchronized UserStorage getInstance() {
