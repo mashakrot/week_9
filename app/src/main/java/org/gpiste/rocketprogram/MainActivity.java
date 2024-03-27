@@ -24,11 +24,13 @@ public class MainActivity extends AppCompatActivity {
         UserStorage s = UserStorage.getInstance();
 
         txtUserCounter.setText("The User count is: " + User.userCounter);
+//        UserStorage.getInstance().loadUsers(context);
     }
 
     public void addUser(View view) {
         Intent intent = new Intent(this, org.gpiste.rocketprogram.AddUserActivity.class);
         startActivity(intent);
+        UserStorage.getInstance().saveUsers(context);
     }
 
     public void viewUsers(View view) {

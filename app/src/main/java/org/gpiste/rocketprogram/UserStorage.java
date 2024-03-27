@@ -36,6 +36,7 @@ public class UserStorage {
             userWriter.close();
         } catch (IOException e) {
             Log.d("UsersApp: Storage", "Saving users failed");
+            System.out.println("aaaaaaaaaaaaaaaaa");
         }
     }
 
