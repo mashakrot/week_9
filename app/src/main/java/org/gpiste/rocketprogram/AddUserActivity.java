@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 /**
@@ -14,22 +15,21 @@ import android.widget.RadioGroup;
 public class AddUserActivity extends AppCompatActivity {
     private EditText editFirstName, editLastName, editEmail;
     private RadioGroup radioDegreeProgram;
+    private LinearLayout radioDegreeLevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
 
-        editFirstName = findViewById(R.id.editFirstName);
-        editLastName = findViewById(R.id.editLastName);
-        editEmail = findViewById(R.id.editEmail);
-        radioDegreeProgram = findViewById(R.id.radioDegreeProgram);
+        editFirstName = findViewById(R.id.textFirstName);
+        editLastName = findViewById(R.id.textLastName);
+        editEmail = findViewById(R.id.textEmail);
+        radioDegreeProgram = findViewById(R.id.textDegreeProgram);
+
+        radioDegreeLevel = findViewById(R.id.textUserDegrees);
     }
 
-    /**
-     * In activity_add_rocket.xml ->
-     * btnAddRocket "onClick" attribute points to this method
-     */
 //    User newUser = null;
     public void addUser(View view) {
         String degree = "";
@@ -52,14 +52,6 @@ public class AddUserActivity extends AppCompatActivity {
                 degree = "Electrical Engineering";
                 break;
         }
-//
-//        Degree level: textUserDegrees
-//
-//        Check box ids for degree levels:
-//        Bachelor's check box: bcCheckBox
-//        Master's check box: msCheckBox
-//        Licenciate check box: lciCheckBox
-//        PhD check box: phdCheckBox
 
 //        int selectedId = radioDegreeProgram.getCheckedRadioButtonId();
 //        if (selectedId != -1) {

@@ -6,16 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".AddUserActivity">
 
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="729dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingTop="25dp"
-        tools:layout_editor_absoluteY="57dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <EditText
-            android:id="@+id/editFirstName"
+            android:id="@+id/textFirstName"
             android:layout_width="250dp"
             android:layout_height="59dp"
             android:layout_marginHorizontal="50dp"
@@ -23,7 +30,7 @@
             android:hint="First Name" />
 
         <EditText
-            android:id="@+id/editLastName"
+            android:id="@+id/textLastName"
             android:layout_width="250dp"
             android:layout_height="59dp"
             android:layout_marginHorizontal="50dp"
@@ -32,7 +39,7 @@
             android:hint="Last Name" />
 
         <EditText
-            android:id="@+id/editEmail"
+            android:id="@+id/textEmail"
             android:layout_width="250dp"
             android:layout_height="59dp"
             android:layout_marginHorizontal="50dp"
@@ -42,7 +49,7 @@
 
 
         <RadioGroup
-            android:id="@+id/radioDegreeProgram"
+            android:id="@+id/textDegreeProgram"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -75,16 +82,66 @@
                 android:text="Electrical Engineering" />
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/textUserDegrees"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <CheckBox
+                android:id="@+id/bcCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bachelor"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="487dp" />
+
+            <CheckBox
+                android:id="@+id/msCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Master"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="536dp" />
+
+            <CheckBox
+                android:id="@+id/lciCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Licenciate"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="588dp" />
+
+            <CheckBox
+                android:id="@+id/phdCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PhD"
+                tools:layout_editor_absoluteX="-7dp"
+                tools:layout_editor_absoluteY="637dp" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/addUserButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:onClick="addUser"
-            android:text="Add User"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioDegreeProgram" />
+            android:text="Add User" />
     </LinearLayout>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
