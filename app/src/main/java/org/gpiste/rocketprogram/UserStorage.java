@@ -22,11 +22,13 @@ public class UserStorage {
     }
 
     public ArrayList<User> getUsers() {
+//        loadUsers();
         return users;
     }
 
     public void addUser(User user) {
         users.add(user);
+//        saveUsers();
     }
 
     public void saveUsers(Context context) {

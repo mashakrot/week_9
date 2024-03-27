@@ -1,5 +1,6 @@
 package org.gpiste.rocketprogram;
 
+import android.content.Context;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ public class ListUserInRecycleViewActivity extends AppCompatActivity {
 
     private RecyclerView rvUserView;
     private UserListAdapter userListAdapter;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,5 +21,7 @@ public class ListUserInRecycleViewActivity extends AppCompatActivity {
         userListAdapter = new UserListAdapter(getApplicationContext(), UserStorage.getInstance().getUsers());
         rvUserView.setLayoutManager(new LinearLayoutManager(this));
         rvUserView.setAdapter(userListAdapter);
+
+
     }
 }

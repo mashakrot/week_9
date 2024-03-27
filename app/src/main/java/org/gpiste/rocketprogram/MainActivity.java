@@ -5,13 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView txtUserCounter;
     private Context context;
+    private UserStorage storage;
 
 
     @Override
@@ -30,7 +35,17 @@ public class MainActivity extends AppCompatActivity {
     public void addUser(View view) {
         Intent intent = new Intent(this, org.gpiste.rocketprogram.AddUserActivity.class);
         startActivity(intent);
-        UserStorage.getInstance().saveUsers(context);
+//        UserStorage.getInstance().saveUsers(context);
+        storage = UserStorage.getInstance();
+
+        try {
+            ObjectOutputStream userWriter = new ObjectOutputStream(this.openFileOutput("users.data", Context.MODE_PRIVATE));
+            userWriter.writeObject(storage.getUsers());
+            userWriter.close();
+        } catch (IOException e) {
+            Log.d("UsersApp: Storage", "Saving users failed");
+        }
+
     }
 
     public void viewUsers(View view) {
