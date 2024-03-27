@@ -96,7 +96,7 @@
                 android:id="@+id/bcCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bachelor"
+                android:text="B.Sc. degree"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="487dp" />
 
@@ -104,7 +104,7 @@
                 android:id="@+id/msCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Master"
+                android:text="M.Sc. degree"
                 tools:layout_editor_absoluteX="33dp"
                 tools:layout_editor_absoluteY="536dp" />
 
@@ -120,7 +120,7 @@
                 android:id="@+id/phdCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="PhD"
+                android:text="Doctoral degree"
                 tools:layout_editor_absoluteX="-7dp"
                 tools:layout_editor_absoluteY="637dp" />
         </LinearLayout>
