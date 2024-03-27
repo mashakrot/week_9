@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListUserInTextViewActivity">
+
+    <!-- TextView to display the list of users -->
+    <TextView
+        android:id="@+id/textViewSavedUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:text="List of Users:"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>
